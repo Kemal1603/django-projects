@@ -1,0 +1,29 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}News Add Form{% endblock %}
+
+{% block body %}
+<!--При клике на кнопку "Add News" в боковой панели слева, пользователь переходит по ссылке host_address/news/create
+Здесь срабатывает основной файл urls.py он видит host_address/news и после этого вызывает файл news/urls.py, далее
+файл news/urls.py проверяет, что указано в ссылке, после  host_address/news/, так как там указано слово create, то
+он обращается к локальному файлу views.py из дирректории news и вызывает из этого файла функцию create, что делает
+это функция можно посмотреть в файле news/views.py, после всех операций она возвращает данную страницу create.html
+и передает ей словарь с данными, к которым из данного файла можно обратиться при помощи ключей этого словаря, а именно
+слово form  и error. Слово form, в свою очередь содержит fields = ['title', 'anons', 'full_text', 'date']? к которым
+мы можем обратиться при помощи JinJa-логики Например: form.title. Так же в примере ниже есть первый метод внутри блока
+csrf_token - он используется во всех формах, для безопасной передачи данных из формы-->
+<div class="features">
+    <h1>News adding form</h1>
+    <form method="post">
+        {%csrf_token%}<br>
+        {{form.title}}<br>
+        {{form.anons}}<br>
+        {{form.full_text}}<br>
+        {{form.date}}<br>
+        <span>{{error}}</span>
+        <button class="btn btn-success" type="submit">ADD NEWS</button>
+    </form>
+</div>
+{% endblock %}
+
+

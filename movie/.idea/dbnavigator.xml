@@ -25,9 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="dbf1cf59-f976-4fdb-a62f-37bf8d9137f9">
-        <schema name="information_schema" object-types="function, table, procedure, view" />
-        <schema name="mysql" object-types="function, constraint, column, table, procedure, view, index, dataset trigger" />
-        <schema name="performance_schema" object-types="function, table, procedure, view" />
+        <schema name="mysql" object-types="procedure, index, view, function, constraint, column, dataset trigger, table" />
       </connection>
     </loaded-nodes>
   </component>
@@ -45,9 +43,17 @@
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="dbf1cf59-f976-4fdb-a62f-37bf8d9137f9" dataset="mysql.auth_permission" active-filter-id="" />
     <filter-actions connection-id="dbf1cf59-f976-4fdb-a62f-37bf8d9137f9" dataset="mysql.django_content_type" active-filter-id="" />
+    <filter-actions connection-id="dbf1cf59-f976-4fdb-a62f-37bf8d9137f9" dataset="mysql.movies_rating" active-filter-id="EMPTY_FILTER">
+      <filter id="77e6bfb2-27ba-41f0-98ec-cc7d47de577e" name="Filter" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />

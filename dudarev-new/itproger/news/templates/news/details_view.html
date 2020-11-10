@@ -1,0 +1,15 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block body %}
+<div class="features">
+    <h1>{{ article.title }}</h1>
+    <h1>{{ article.date }}</h1>
+    <p>{{ article.full_text }}</p>
+    <a href="{%url 'news-delete' article.id %}" class="btn btn-danger">Delete Article</a>
+    <a href="{%url 'news-update' article.id %}" class="btn btn-info">Update Article</a>
+    {# Для использования коментариев, через шаблонизатор пользуемся такой функцией #}
+</div>
+{% endblock %}
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"   content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Page Title</title>
+    {%load static %}
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}" type="text/css">
+</head>
+<body>
+<!--Для использования шаблонизатора JinJa используем фигурные скобки({}) и два знака процента
+ внутри(%%), сочетание таких знаков нельзя использовать даже в коментариях иначе интерпритатор
+  даже в каментариях может засчитать скрипт, как рабочий-->
+<div class="jumbotron">
+    <div class="container">
+        <h1>{%include 'mainApp/includes/some_html.html'%}</h1>
+        <p>{%block content%}
+
+           {% endblock %}</p>
+        <p>
+        <a href="/" class="btn btn-success btn-lg">Main Page</a>
+        <a href="/news" class="btn btn-primary btn-lg">News &raquo;</a>
+        <a href="/contact" class="btn btn-info btn-lg">Contacts &raquo;</a>
+        </p>
+    </div>
+</div>
+<div class="container">
+    <img src="{% static 'mainApp/images/mercedes_PNG80199.png'%}" class="img-thumbnail">
+    <hr>
+    &copy; All rights are reserved 2020
+</div>
+</body>
+</html>

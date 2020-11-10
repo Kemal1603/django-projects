@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'movie.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysql',
-        'USER': 'root',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
         'PASSWORD': 'administrator',
         'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'PORT': '5432',
     }
 }
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--Загружаем все папки static со всего проекта-->
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
+</head>
+<body>
+<aside>
+    <img  src="{% static 'main/img/img_473139.png'%}" alt="logo">
+    <span class="logo">CHAKA Nails</span>
+    <h3>Navigation</h3>
+    <!--В ссылке  href в шаблонизаторе JinJa, когда мы обращаемся к ключевому слову  url
+        оно подтягивает все ссылки указанные в файлах urls.py и мы можем обратиться к любой
+        странице .html по имени, которое мы сами задаем в файлах urls.py в качестве атрибута
+        name, Например: path('about/', views.about, name='about') при этом значение атрибута
+        name и первый аргумент "ссылка" не обязательно должны совпадать, но как правило им
+        часто присваивают одинаковые имена-->
+    <ul>
+        <a href="{% url 'homepage' %}"><li><i class="fas fa-home"></i>Main</li></a>
+        <a href="{% url 'about' %}"><li><i class="fas fa-address-card"></i>About</li></a>
+        <a href="{% url 'news_home' %}"><li><i class="fas fa-rss-square"></i>Our News</li></a>
+        <a href=""><li><i class="fas fa-paper-plane"></i>Contact Us</li></a>
+        <a href="{% url 'create'%}"><li><button class="btn btn-info" ><i class="fas fa-plus-circle"></i>Add News</button></li></a>
+    </ul>
+</aside>
+<!--Ниже, в блоке JinJa-логики мы указываем место, в котором возможно будет код из другой страницы .html. Таким
+ образом мы как-бы используем данную страницу layout.html в качестве "обертки". То есть импортируем весь код с этой
+ страницы в другую при помощи все той же JinJa-логики и ключевого слова extends. Например, как в странице
+ index.html. ВАЖНО!!! Название блока (в данном случае body) указывает, где именно будет вставляться текст из другой
+ страницы .html, в обычной странице .html может быть несколько блоков , главное, что бы названия блоков различались-->
+<main>
+    {% block body %}
+
+    {% endblock %}
+    </main>
+</body>
+</html>
